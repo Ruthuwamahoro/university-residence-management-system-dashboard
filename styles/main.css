@@ -134,13 +134,12 @@ canvas {
 }
 
 .btn-group .dropdown-menu {
-    border: 2px solid #485A48; /* Border color for dropdown */
     border-radius: 20px; /* Rounded corners */
-    padding: 0; /* Remove padding */
+    padding: 0;
 }
 
 .btn-group .dropdown-item {
-    border-radius: 0; /* Remove border radius for dropdown items */
+    border-radius: 15px;
     color: #485A48; /* Text color for dropdown items */
 }
 
