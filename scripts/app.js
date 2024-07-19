@@ -89,4 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.style.color = isDarkTheme ? '#fff' : '#000';
         });
     }
+
+    // Set active link based on current page
+    const currentPage = window.location.pathname.split('/').pop(); // Get the current page name
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 });

@@ -115,3 +115,43 @@ canvas {
     border-radius: 50%; /* Make the image round */
     object-fit: cover; /* Ensure the image covers the container */
 }
+
+/* Styles for dropdown buttons */
+.btn-group {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-group .btn {
+    border-radius: 20px; /* Rounded corners */
+    border: 2px solid #485A48; /* Border color */
+    color: #485A48; /* Button text color */
+}
+
+.btn-group .btn:hover {
+    background-color: #485A48; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+
+.btn-group .dropdown-menu {
+    border: 2px solid #485A48; /* Border color for dropdown */
+    border-radius: 20px; /* Rounded corners */
+    padding: 0; /* Remove padding */
+}
+
+.btn-group .dropdown-item {
+    border-radius: 0; /* Remove border radius for dropdown items */
+    color: #485A48; /* Text color for dropdown items */
+}
+
+.btn-group .dropdown-item:hover {
+    background-color: #485A48; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+
+.nav-link.active {
+    background-color: #485A48;
+    color: #ffffff !important;
+    border-radius: 20px;
+    padding: 10px;
+}
