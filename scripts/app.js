@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data: {
                 labels: ['Suites', 'Single Rooms', 'Double Rooms'],
                 datasets: [{
-                    data: [10, 15, 5],
+                    data: [10, 15, 36],
                     backgroundColor: ['#73B175', '#503D21', '#FC9089']
                 }]
             },
