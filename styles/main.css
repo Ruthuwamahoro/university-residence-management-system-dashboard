@@ -1,0 +1,121 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #212529; /* Default text color for light theme */
+}
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: #28a745; /* Light theme sidebar color */
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff; /* Light theme logo color */
+}
+
+.sidebar .nav-link {
+    font-size: 18px;
+    color: #ffffff; /* Light theme nav link color */
+}
+
+.main-content {
+    padding: 20px;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.theme-switcher {
+    cursor: pointer;
+}
+
+.theme-switcher i {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.notifications i {
+    font-size: 18px;
+}
+
+section.dashboard h1, section.rooms h1 {
+    margin-bottom: 20px;
+}
+
+section.dashboard h2 {
+    margin-bottom: 10px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529; /* Light theme table text color */
+}
+
+.table thead th {
+    background-color: #343a40;
+    color: #fff; /* Light theme table header text color */
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+    background-color: #343a40;
+    color: #fff; /* Dark theme default text color */
+}
+
+.dark-theme .sidebar {
+    background-color: #23272b; /* Dark theme sidebar color */
+}
+
+.dark-theme .sidebar .nav-link {
+    color: #fff; /* Dark theme nav link color */
+}
+
+.dark-theme .main-content {
+    background-color: #343a40; /* Dark theme main content background color */
+    color: #fff; /* Dark theme main content text color */
+}
+
+.dark-theme header {
+    background-color: #23272b; /* Dark theme header background color */
+    border-bottom: 1px solid #343a40;
+}
+
+.dark-theme .table {
+    color: #fff; /* Dark theme table text color */
+}
+
+.dark-theme .table thead th {
+    background-color: #495057; /* Dark theme table header background color */
+    color: #fff; /* Dark theme table header text color */
+}
+
+  .logo {
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+  }
+  
+  .logo-img {
+    width: 100%; /* Make the image responsive */
+    max-width: 100px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image covers the container */
+  }
+  
