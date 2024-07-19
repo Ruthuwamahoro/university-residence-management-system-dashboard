@@ -67,14 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Switcher
     const themeSwitcher = document.querySelector('.theme-switcher');
+    const icons = document.querySelectorAll('.theme-switcher i, .notifications i, .input-group-text i');
+
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', () => {
             document.body.classList.toggle('dark-theme');
-            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+            const isDarkTheme = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+            updateIconColors(isDarkTheme);
         });
 
-        if (localStorage.getItem('theme') === 'dark') {
+        const isDarkTheme = localStorage.getItem('theme') === 'dark';
+        if (isDarkTheme) {
             document.body.classList.add('dark-theme');
         }
+        updateIconColors(isDarkTheme);
+    }
+
+    function updateIconColors(isDarkTheme) {
+        icons.forEach(icon => {
+            icon.style.color = isDarkTheme ? '#fff' : '#000';
+        });
     }
 });
