@@ -3,7 +3,7 @@ body {
     background-color: #80AF81;
     margin: 0;
     padding: 0;
-    color: #D6EFD8; /* Default text color for light theme */
+    color: #000; /* Default text color for light theme */
 }
 
 .sidebar {
@@ -31,9 +31,8 @@ header {
     cursor: pointer;
 }
 
-.theme-switcher i {
-    font-size: 18px;
-    margin: 0 5px;
+.theme-switcher i, .notifications i, .input-group-text i {
+    color: #000; /* Default icon color for light theme */
 }
 
 .notifications i {
@@ -42,10 +41,12 @@ header {
 
 section.dashboard h1, section.rooms h1 {
     margin-bottom: 20px;
+    color: #000; /* Ensure headers are black in light mode */
 }
 
-section.dashboard h2 {
+section.dashboard h2, section.rooms h2 {
     margin-bottom: 10px;
+    color: #000; /* Ensure sub-headers are black in light mode */
 }
 
 canvas {
@@ -97,17 +98,20 @@ canvas {
     color: #fff; /* Dark theme table header text color */
 }
 
-  .logo {
+.dark-theme .theme-switcher i, .dark-theme .notifications i, .dark-theme .input-group-text i {
+    color: #fff; /* Dark theme icon color */
+}
+
+.logo {
     display: flex;
     justify-content: center; /* Center the logo horizontally */
     align-items: center; /* Center the logo vertically */
-  }
-  
-  .logo-img {
+}
+
+.logo-img {
     width: 100%; /* Make the image responsive */
     max-width: 100px; /* Limit the maximum width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Make the image round */
     object-fit: cover; /* Ensure the image covers the container */
-  }
-  
+}

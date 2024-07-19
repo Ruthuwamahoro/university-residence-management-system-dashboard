@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 labels: ['Suites', 'Single Rooms', 'Double Rooms'],
                 datasets: [{
                     data: [10, 15, 36],
-                    backgroundColor: ['#73B175', '#503D21', '#FC9089']
+                    backgroundColor: ['#73B175', '#5E4E37', '#485A48']
                 }]
             },
             options: {
