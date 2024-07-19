@@ -1,24 +1,16 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #D6EFD8;
     margin: 0;
     padding: 0;
-    color: #212529; /* Default text color for light theme */
+    color: #D6EFD8; /* Default text color for light theme */
 }
 
 .sidebar {
     width: 250px;
     min-height: 100vh;
-    background-color: #28a745; /* Light theme sidebar color */
+    background-color: #D6EFD8; /* Light theme sidebar color */
 }
-
-.sidebar .logo {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #fff; /* Light theme logo color */
-}
-
 .sidebar .nav-link {
     font-size: 18px;
     color: #ffffff; /* Light theme nav link color */

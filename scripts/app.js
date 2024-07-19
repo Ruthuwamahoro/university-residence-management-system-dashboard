@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 labels: ['Suites', 'Single Rooms', 'Double Rooms'],
                 datasets: [{
                     data: [10, 15, 5],
-                    backgroundColor: ['#4CAF50', '#FF9800', '#F44336']
+                    backgroundColor: ['#73B175', '#503D21', '#FC9089']
                 }]
             },
             options: {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 datasets: [{
                     label: 'Maintenance Requests',
                     data: [8, 6, 4],
-                    backgroundColor: '#FF9800'
+                    backgroundColor: '#578657'
                 }]
             },
             options: {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 datasets: [{
                     label: 'Occupancy Rates',
                     data: [80, 40, 60],
-                    backgroundColor: '#4CAF50'
+                    backgroundColor: '#578657'
                 }]
             },
             options: {
