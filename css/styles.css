@@ -72,6 +72,19 @@ body {
     max-height: 450px;
     overflow-y: auto;
 }
+.logo-img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.notifications {
+    cursor: pointer
+}
+.notifications-list {
+    display: none;
+}
 
 @media screen and (min-width: 992px) {
     .top-nav {
