@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const notificationsList = document.querySelector('#notifications-list');
     const maintenanceTableBody = document.getElementById('maintenance-table-body');
     const notificationsContainer = document.querySelector('.notifications-container');
+    const numberOfNotifications = document.querySelector('.nbr-notifications')
     const API_URL = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/maintenances';
     const API_URL_NOTIFICATIONS = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/notifications';
 
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
     
+
     if (closeIcon) {
         closeIcon.addEventListener('click', (e) => {
             e.preventDefault();
@@ -93,6 +95,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const populateTable = (data) => {
         if (maintenanceTableBody) {
             maintenanceTableBody.innerHTML = '';
+            numberOfNotifications.innerHTML = data.length
+            numberOfNotifications.style.fontWeight = 'bolder';
+            numberOfNotifications.style.color = 'white';
+            numberOfNotifications.style.backgroundColor = 'red';
+            numberOfNotifications.style.padding = '4px';
+            numberOfNotifications.style.fontSize = '12px';
+            numberOfNotifications.style.borderRadius = '50%';
             data.forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `

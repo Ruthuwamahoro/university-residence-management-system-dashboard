@@ -1,3 +1,6 @@
+body {
+    font-family: 'Livvic', sans-serif;
+}
 .nbr-notifications {
     position: absolute;
     background-color: red;
