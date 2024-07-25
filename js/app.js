@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize charts
     const ctxRoomTypes = document.getElementById('roomTypesChart')?.getContext('2d');
     if (ctxRoomTypes) {
         new Chart(ctxRoomTypes, {

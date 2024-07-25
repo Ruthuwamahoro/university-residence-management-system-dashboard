@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
     
-
     if (closeIcon) {
         closeIcon.addEventListener('click', (e) => {
             e.preventDefault();
