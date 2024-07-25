@@ -10,9 +10,10 @@ body {
     min-height: 100vh;
     background-color: #D6EFD8;
 }
+
 .sidebar .nav-link {
     font-size: 18px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .main-content {
@@ -34,20 +35,25 @@ header {
     cursor: pointer;
 }
 
-.theme-switcher i, .notifications i, .input-group-text i {
+.theme-switcher i, 
+.notifications i, 
+.input-group-text i  {
     color: #000;
 }
 
 .notifications i {
     font-size: 18px;
+    cursor: pointer;
 }
 
-section.dashboard h1, section.rooms h1 {
+section.dashboard h1, 
+section.rooms h1 {
     margin-bottom: 20px;
     color: #000;
 }
 
-section.dashboard h2, section.rooms h2 {
+section.dashboard h2, 
+section.rooms h2 {
     margin-bottom: 10px;
     color: #000;
 }
@@ -60,63 +66,52 @@ canvas {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #212529; /* Light theme table text color */
 }
 
 .table thead th {
     background-color: #343a40;
-    color: #fff; /* Light theme table header text color */
+    color: #fff;
 }
 
 /* Dark Theme Styles */
 .dark-theme {
     background-color: #343a40;
-    color: #fff; /* Dark theme default text color */
+    color: #fff;
 }
 
 .dark-theme .sidebar {
-    background-color: #23272b; /* Dark theme sidebar color */
+    background-color: #23272b;
 }
 
 .dark-theme .sidebar .nav-link {
-    color: #fff; /* Dark theme nav link color */
+    color: #fff;
 }
 
 .dark-theme .main-content {
-    background-color: #343a40; /* Dark theme main content background color */
-    color: #fff; /* Dark theme main content text color */
+    background-color: #343a40;
 }
 
 .dark-theme header {
-    background-color: #23272b; /* Dark theme header background color */
+    background-color: #23272b;
     border-bottom: 1px solid #343a40;
 }
 
-.dark-theme .table {
-    color: #fff; /* Dark theme table text color */
-}
-
 .dark-theme .table thead th {
-    background-color: #495057; /* Dark theme table header background color */
-    color: #fff; /* Dark theme table header text color */
-}
-
-.dark-theme .theme-switcher i, .dark-theme .notifications i, .dark-theme .input-group-text i {
-    color: #fff; /* Dark theme icon color */
+    background-color: #495057;
 }
 
 .logo {
     display: flex;
-    justify-content: center; /* Center the logo horizontally */
-    align-items: center; /* Center the logo vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-img {
-    width: 100%; /* Make the image responsive */
-    max-width: 100px; /* Limit the maximum width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Make the image round */
-    object-fit: cover; /* Ensure the image covers the container */
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Styles for dropdown buttons */
@@ -126,29 +121,28 @@ canvas {
 }
 
 .btn-group .btn {
-    border-radius: 20px; /* Rounded corners */
-    border: 2px solid #485A48; /* Border color */
-    color: #485A48; /* Button text color */
+    border-radius: 20px;
+    border: 2px solid #485A48;
+    color: #485A48;
 }
 
 .btn-group .btn:hover {
-    background-color: #485A48; /* Background color on hover */
-    color: #fff; /* Text color on hover */
+    background-color: #485A48;
+    color: #fff;
 }
 
 .btn-group .dropdown-menu {
-    border-radius: 20px; /* Rounded corners */
-    padding: 0;
+    border-radius: 20px;
 }
 
 .btn-group .dropdown-item {
     border-radius: 15px;
-    color: #485A48; /* Text color for dropdown items */
+    color: #485A48;
 }
 
 .btn-group .dropdown-item:hover {
-    background-color: #485A48; /* Background color on hover */
-    color: #fff; /* Text color on hover */
+    background-color: #485A48;
+    color: #fff;
 }
 
 .nav-link.active {
@@ -156,6 +150,12 @@ canvas {
     color: #ffffff !important;
     border-radius: 20px;
     padding: 10px;
+}
+
+.nav-link:hover {
+    background-color: #555;
+    color: #f0f0f0;
+    border-radius: 20px;
 }
 
 /* Mobile Menu */

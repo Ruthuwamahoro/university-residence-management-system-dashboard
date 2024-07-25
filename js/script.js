@@ -1,68 +1,82 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const menu = document.getElementsByClassName('menu')[0];
-    const navigation = document.getElementsByClassName('sidenav')[0];
+    const menu = document.querySelector('.menu');
+    const navigation = document.querySelector('.sidenav');
     const closeIcon = document.querySelector('.close-fill');
-    const searchWord = document.querySelector('.search-input');
+    const searchInput = document.querySelector('.search-input');
     const toggleMode = document.querySelector('.toogle-mode');
     const notificationsPanel = document.querySelector('.notifications');
-    const notificationsList = document.querySelector('.notifications-list');
+    const notificationsList = document.querySelector('#notifications-list');
     const maintenanceTableBody = document.getElementById('maintenance-table-body');
+    const notificationsContainer = document.querySelector('.notifications-container');
     const API_URL = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/maintenances';
     const API_URL_NOTIFICATIONS = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/notifications';
+
     if (menu) {
         menu.addEventListener('click', (e) => {
             e.preventDefault();
             navigation.style.display = 'block';
         });
     }
+    
+
     if (closeIcon) {
         closeIcon.addEventListener('click', (e) => {
             e.preventDefault();
             navigation.style.display = 'none';
         });
     }
-    if (searchWord) {
-        searchWord.addEventListener('focus', (e) => {
-            e.preventDefault();
-            searchWord.style.border = 'none';
-            searchWord.style.borderBottom = '1px solid #000';
+
+    if (searchInput) {
+        searchInput.addEventListener('focus', () => {
+            searchInput.style.border = 'none';
+            searchInput.style.borderBottom = '1px solid #000';
         });
     }
+
     if (toggleMode) {
-        toggleMode.addEventListener('click', (e) => {
-            e.preventDefault();
+        toggleMode.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             if (navigation) {
                 navigation.classList.toggle('dark-mode-sidenav');
             }
         });
     }
-    if (notificationsPanel && notificationsList) {
-        notificationsPanel.addEventListener('click', async (e) => {
-            e.preventDefault();
-            notificationsList.style.display = notificationsList.style.display === 'block' ? 'none' : 'block';
+
+    if (notificationsPanel && notificationsList && notificationsContainer) {
+        notificationsPanel.addEventListener('click', () => {
+            notificationsContainer.style.display = notificationsContainer.style.display === 'block' ? 'none' : 'block';
+        });
+
+        const fetchNotifications = async () => {
             try {
                 const response = await fetch(API_URL_NOTIFICATIONS);
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 const data = await response.json();
-                notificationsList.innerHTML = '';
-                data.forEach(item => {
-                    const nots = document.createElement('div');
-                    nots.classList.add('notification-item');
-                    nots.innerHTML = `
-                        <p>${item.sender}</p>
-                        <p>${item.notifications}</p>
-                        <strong>${new Date(item.createdAt).toLocaleString()}</strong>
-                    `;
-                    notificationsList.appendChild(nots);
-                });
+                renderNotifications(data);
             } catch (error) {
                 console.error('Error fetching notifications:', error);
             }
-        });
+        };
+
+        const renderNotifications = (notifications) => {
+            notificationsList.innerHTML = '';
+            notifications.forEach(item => {
+                const nots = document.createElement('div');
+                nots.classList.add('notification-item');
+                nots.innerHTML = `
+                    <p class="text-primary">${item.sender}</p>
+                    <p>${item.notifications}</p>
+                    <strong>${new Date(item.createdAt).toLocaleString()}</strong>
+                `;
+                notificationsList.appendChild(nots);
+            });
+        };
+
+        fetchNotifications();
     }
+
     const fetchData = async () => {
         try {
             const response = await fetch(API_URL);
