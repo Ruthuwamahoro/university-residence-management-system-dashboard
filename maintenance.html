@@ -10,33 +10,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/notifications.css">
 </head>
 <body>
     <div class="d-flex">
-        <div class="sidebar p-3 sidenav" style="background-color: #D6EFD8;">
+        <div class="sidebar p-3 sidenav">
             <h5 class="text-center fw-bolder">University Residence Management System</h5>
             <div class="d-flex justify-content-center align-items-center mb-3">
-                <img src="images/MostarResidents.jpg" alt="Logo" class="logo-img">
+                <img src="./Assets/images/MostarResidents.jpg" alt="Logo" class="logo-img">
             </div>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2">
-                    <a class="nav-link text-left" style="color: black;" href="index.html">
-                        <img src="Assets/images/Vector (1).png" alt="" class="mr-2">Dashboard
+                    <a class="nav-link text-left" href="index.html">
+                        <img src="Assets/images/Vector (1).png" alt="" class="mr-2 sideNav">Dashboard
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link text-left" style="color: black;" href="rooms.html">
-                        <img src="Assets/images/material-symbols_room-service-sharp.png" alt="" class="mr-2">Rooms
+                    <a class="nav-link text-left" href="rooms.html">
+                        <img src="Assets/images/material-symbols_room-service-sharp.png" alt="" class="mr-2 sideNav">Rooms
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link text-left" style="color: black;" href="maintenance.html">
-                        <img src="Assets/images/wpf_maintenance.png" alt="" class="mr-2">Maintenance
+                    <a class="nav-link text-left" href="maintenance.html">
+                        <img src="Assets/images/wpf_maintenance.png" alt="" class="mr-2 sideNav">Maintenance
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link text-left" style="color: black;" href="settings.html">
-                        <img src="Assets/images/mdi_settings-outline.png" alt="" class="mr-2">Settings
+                    <a class="nav-link text-left" href="settings.html">
+                        <img src="Assets/images/mdi_settings-outline.png" alt="" class="mr-2 sideNav">Settings
                     </a>
                 </li>
             </ul>
@@ -61,7 +62,11 @@
                     </div>
                 </div>
             </header>
-            <div class="notifications-list">
+            <div class="notifications-container position-relative">
+                <div class="notifications col-4 p-3 position-absolute">
+                    <div class="notifications-list" id="notifications-list">
+                    </div>
+                </div>
             </div>
             <div class="d-block align-items-end">
                 <div class="btn-group">
@@ -75,7 +80,7 @@
                       <button class="dropdown-item" type="button" data-filter="priority">Priority</button>
                   </div>
               </div> 
-            <section class="col-12 maintenance-request m-5">
+            <section class="col-12 maintenance-request">
                 <p class="text-center text-white fw-bold">Maintenance Request</p>
                 <div class="table-container">
                     <table class="table table-striped">
@@ -101,5 +106,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/script.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/notifications.js"></script>
 </body>
 </html>
