@@ -10,7 +10,6 @@ body {
     min-height: 100vh;
     background-color: #D6EFD8;
 }
-
 .sidebar .nav-link {
     font-size: 18px;
     color: #000000;
@@ -31,9 +30,7 @@ header {
     cursor: pointer;
 }
 
-.theme-switcher i, 
-.notifications i, 
-.input-group-text i  {
+.theme-switcher i, .notifications i, .input-group-text i  {
     color: #000;
 }
 
@@ -42,14 +39,12 @@ header {
     cursor: pointer;
 }
 
-section.dashboard h1, 
-section.rooms h1 {
+section.dashboard h1, section.rooms h1 {
     margin-bottom: 20px;
     color: #000;
 }
 
-section.dashboard h2, 
-section.rooms h2 {
+section.dashboard h2, section.rooms h2 {
     margin-bottom: 10px;
     color: #000;
 }
@@ -62,39 +57,52 @@ canvas {
 .table {
     width: 100%;
     margin-bottom: 1rem;
+    color: #212529; /* Light theme table text color */
 }
 
 .table thead th {
     background-color: #343a40;
-    color: #fff;
+    color: #fff; /* Light theme table header text color */
 }
 
 /* Dark Theme Styles */
 .dark-theme {
     background-color: #343a40;
-    color: #fff;
+    color: #fff; /* Dark theme default text color */
 }
 
 .dark-theme .sidebar {
-    background-color: #23272b;
+    background-color: #23272b; /* Dark theme sidebar color */
 }
 
 .dark-theme .sidebar .nav-link {
-    color: #fff;
+    color: #fff; /* Dark theme nav link color */
 }
 
 .dark-theme .main-content {
-    background-color: #343a40;
+    background-color: #343a40; /* Dark theme main content background color */
+    color: #fff; /* Dark theme main content text color */
 }
 
 .dark-theme header {
-    background-color: #23272b;
+    background-color: #23272b; /* Dark theme header background color */
     border-bottom: 1px solid #343a40;
+}
+
+.dark-theme .table {
+    color: #fff;
 }
 
 .dark-theme .table thead th {
     background-color: #495057;
+    color: #fff;
 }
+
+.dark-theme .theme-switcher i, .dark-theme .notifications i, .dark-theme .input-group-text i {
+    color: #fff;
+}
+
+
 
 .logo {
     display: flex;
@@ -103,11 +111,11 @@ canvas {
 }
 
 .logo-img {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 100%; /* Make the image responsive */
+    max-width: 100px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image covers the container */
 }
 
 /* Styles for dropdown buttons */
@@ -117,28 +125,29 @@ canvas {
 }
 
 .btn-group .btn {
-    border-radius: 20px;
-    border: 2px solid #485A48;
-    color: #485A48;
+    border-radius: 20px; /* Rounded corners */
+    border: 2px solid #485A48; /* Border color */
+    color: #485A48; /* Button text color */
 }
 
 .btn-group .btn:hover {
-    background-color: #485A48;
-    color: #fff;
+    background-color: #485A48; /* Background color on hover */
+    color: #fff; /* Text color on hover */
 }
 
 .btn-group .dropdown-menu {
-    border-radius: 20px;
+    border-radius: 20px; /* Rounded corners */
+    padding: 0;
 }
 
 .btn-group .dropdown-item {
     border-radius: 15px;
-    color: #485A48;
+    color: #485A48; /* Text color for dropdown items */
 }
 
 .btn-group .dropdown-item:hover {
-    background-color: #485A48;
-    color: #fff;
+    background-color: #485A48; /* Background color on hover */
+    color: #fff; /* Text color on hover */
 }
 
 .nav-link.active {
@@ -147,9 +156,9 @@ canvas {
     border-radius: 20px;
     padding: 10px;
 }
-
 .nav-link:hover {
     background-color: #555;
     color: #f0f0f0;
     border-radius: 20px;
 }
+
