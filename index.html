@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div class="d-flex">
+  <div class="d-flex flex-column flex-md-row">
     <div class="sidebar p-3" style="background-color: #D6EFD8;">
       <h5 class="text-center" style="color: black;">University Residence Management System</h5>
       <div class="logo mb-4">
@@ -33,7 +33,7 @@
       </ul>
   </div>      
     <div class="main-content flex-grow-1 p-3">
-      <header class="d-flex justify-content-between align-items-center mb-4">
+      <header class="nav-bar d-flex justify-content-between align-items-center mb-4">
         <div class="input-group w-50">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
@@ -50,9 +50,19 @@
             <div class="notificationMessage">
 
             </div>
+            <div class="dropdown ml-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="index.html"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+                    <a class="dropdown-item" href="rooms.html"><i class="fas fa-bed mr-2"></i>Rooms</a>
+                    <a class="dropdown-item" href="maintenance.html"><i class="fas fa-tools mr-2"></i>Maintenance</a>
+                    <a class="dropdown-item" href="settings.html"><i class="fas fa-cog mr-2"></i>Settings</a>
+                </div>
+            </div>
         </div>
     </header>    
-      </header>
       <section class="dashboard mb-4">
         <h1 class="text-white">Mostar Room Management</h1>
         <div class="row">

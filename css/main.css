@@ -19,6 +19,10 @@ body {
     padding: 20px;
 }
 
+.dropdown {
+    display: none;
+}
+
 header {
     background-color: #ffffff;
     border-bottom: 1px solid #dee2e6;
@@ -152,4 +156,47 @@ canvas {
     color: #ffffff !important;
     border-radius: 20px;
     padding: 10px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .nav-bar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dropdown{
+        display: block;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        padding: 0;
+    }
+
+    .dropdown-item {
+        padding: 10px 20px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .input-group-prepend {
+        display: none;
+    }
+
+    .input-group-text {
+        display: none;
+    }
+
+    
 }

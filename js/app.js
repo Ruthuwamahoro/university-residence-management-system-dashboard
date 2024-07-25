@@ -102,4 +102,38 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
         }
     });
+
+    $(document).ready(function() {
+        // Toggle the dropdown
+        $('.dropdown-toggle').click(function() {
+          $(this).siblings('.dropdown-menu').toggle();
+        });
+  
+        // Handle dropdown item click
+        $('.dropdown-item').click(function() {
+          var filterValue = $(this).data('filter');
+          
+          $('#room-table-body tr').each(function() {
+            var rowStatus = $(this).data('status');
+            
+            if (filterValue === 'all' || rowStatus === filterValue) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+          
+          // Close dropdown after selection
+          $('.dropdown-menu').hide();
+          // Update button text
+          $('.dropdown-toggle').text($(this).text());
+        });
+        
+        // Hide dropdown when clicking outside
+        $(document).click(function(e) {
+          if (!$(e.target).closest('.dropdown-toggle').length) {
+            $('.dropdown-menu').hide();
+          }
+        });
+      });
 });
