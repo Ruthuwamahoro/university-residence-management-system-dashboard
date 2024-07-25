@@ -137,4 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       });
+
+      document.querySelector('.dropdownMenuButton').addEventListener('click', function() {
+          document.querySelector('.dropdownMenu').classList.toggle('show');
+      })
 });
