@@ -1,29 +1,21 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const menu = document.querySelector('.menu');
-    const navigation = document.querySelector('.sidenav');
-    const closeIcon = document.querySelector('.close-fill');
+    const menu = document.querySelector('.dropdownMenuButton');
+    const navigation = document.querySelector('.dropdownMenu');
     const searchInput = document.querySelector('.search-input');
-    const toggleMode = document.querySelector('.toogle-mode');
+    const toggleMode = document.querySelector('.theme-switcher');
     const notificationsPanel = document.querySelector('.notifications');
     const notificationsList = document.querySelector('#notifications-list');
     const maintenanceTableBody = document.getElementById('maintenance-table-body');
     const notificationsContainer = document.querySelector('.notifications-container');
-    const numberOfNotifications = document.querySelector('.nbr-notifications')
+    const numberOfNotifications = document.querySelector('.nbr-notifications');
     const API_URL = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/maintenances';
     const API_URL_NOTIFICATIONS = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/notifications';
+    const filterButtons = document.querySelectorAll('.dropdown-item');
 
     if (menu) {
         menu.addEventListener('click', (e) => {
             e.preventDefault();
-            navigation.style.display = 'block';
-        });
-    }
-    
-
-    if (closeIcon) {
-        closeIcon.addEventListener('click', (e) => {
-            e.preventDefault();
-            navigation.style.display = 'none';
+            navigation.style.display = navigation.style.display === 'block' ? 'none' : 'block';
         });
     }
 
@@ -37,9 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (toggleMode) {
         toggleMode.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            if (navigation) {
-                navigation.classList.toggle('dark-mode-sidenav');
-            }
         });
     }
 
@@ -56,6 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
                 const data = await response.json();
                 renderNotifications(data);
+                updateNotificationCount(data.length);
             } catch (error) {
                 console.error('Error fetching notifications:', error);
             }
@@ -73,6 +63,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 `;
                 notificationsList.appendChild(nots);
             });
+        };
+
+        const updateNotificationCount = (count) => {
+            numberOfNotifications.textContent = count;
+            numberOfNotifications.style.display = count > 0 ? 'block' : 'none';
+            numberOfNotifications.style.fontWeight = 'bolder';
+            numberOfNotifications.style.color = 'white';
+            numberOfNotifications.style.backgroundColor = 'red';
+            numberOfNotifications.style.padding = '4px';
+            numberOfNotifications.style.fontSize = '12px';
+            numberOfNotifications.style.borderRadius = '50%';
         };
 
         fetchNotifications();
@@ -95,13 +96,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const populateTable = (data) => {
         if (maintenanceTableBody) {
             maintenanceTableBody.innerHTML = '';
-            numberOfNotifications.innerHTML = data.length
-            numberOfNotifications.style.fontWeight = 'bolder';
-            numberOfNotifications.style.color = 'white';
-            numberOfNotifications.style.backgroundColor = 'red';
-            numberOfNotifications.style.padding = '4px';
-            numberOfNotifications.style.fontSize = '12px';
-            numberOfNotifications.style.borderRadius = '50%';
             data.forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -116,6 +110,26 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         }
     };
+
+    const filterMaintenanceRequests = (criteria, value) => {
+        fetchData().then(data => {
+            let filteredData = data;
+            if (criteria === 'status') {
+                filteredData = data.filter(item => item.status === value);
+            } else if (criteria === 'roomNumber') {
+                filteredData = data.filter(item => item.roomNumber === value);
+            }
+            populateTable(filteredData);
+        });
+    };
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterCriteria = button.getAttribute('data-filter');
+            const filterValue = prompt(`Enter ${filterCriteria}`);
+            filterMaintenanceRequests(filterCriteria, filterValue);
+        });
+    });
 
     const maintenanceData = await fetchData();
     populateTable(maintenanceData);

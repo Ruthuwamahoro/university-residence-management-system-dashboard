@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const numberOfNotifications = document.querySelector('.nbr-notifications');
     const API_URL_NOTIFICATIONS = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/notifications';
-
     const fetchNotifications = async () => {
         try {
             const response = await fetch(API_URL_NOTIFICATIONS);

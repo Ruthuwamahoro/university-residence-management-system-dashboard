@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const ctxRoomTypes = document.getElementById('roomTypesChart')?.getContext('2d');
+    const toggleMode = document.querySelector('.theme-switcher');
+
     if (ctxRoomTypes) {
         new Chart(ctxRoomTypes, {
             type: 'pie',
@@ -12,8 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#fff'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (tooltipItem) => {
+                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                            }
+                        }
+                    }
+                }
             }
+        });
+    }
+
+    if (toggleMode) {
+        toggleMode.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
         });
     }
 
@@ -26,15 +48,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 datasets: [{
                     label: 'Maintenance Requests',
                     data: [8, 6, 4],
-                    backgroundColor: '#578657'
+                    backgroundColor: '#578657',
+                    color: 'white'
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#fff'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (tooltipItem) => {
+                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#fff' 
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#fff'
+                        }
                     }
                 }
             }
@@ -56,16 +101,36 @@ document.addEventListener('DOMContentLoaded', () => {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#fff'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (tooltipItem) => {
+                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#fff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#fff'
+                        }
                     }
                 }
             }
         });
     }
-
-    // Theme Switcher
     const themeSwitcher = document.querySelector('.theme-switcher');
     const icons = document.querySelectorAll('.theme-switcher i, .notifications i, .input-group-text i');
 
@@ -89,9 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.style.color = isDarkTheme ? '#fff' : '#000';
         });
     }
-
-    // Set active link based on current page
-    const currentPage = window.location.pathname.split('/').pop(); // Get the current page name
+    const currentPage = window.location.pathname.split('/').pop(); 
     const navLinks = document.querySelectorAll('.nav-link');
 
     navLinks.forEach(link => {
@@ -104,40 +167,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     $(document).ready(function() {
-        // Toggle the dropdown
         $('.dropdown-toggle').click(function() {
-          $(this).siblings('.dropdown-menu').toggle();
+            $(this).siblings('.dropdown-menu').toggle();
         });
-  
-        // Handle dropdown item click
         $('.dropdown-item').click(function() {
-          var filterValue = $(this).data('filter');
-          
-          $('#room-table-body tr').each(function() {
-            var rowStatus = $(this).data('status');
+            var filterValue = $(this).data('filter');
             
-            if (filterValue === 'all' || rowStatus === filterValue) {
-              $(this).show();
-            } else {
-              $(this).hide();
-            }
-          });
-          
-          // Close dropdown after selection
-          $('.dropdown-menu').hide();
-          // Update button text
-          $('.dropdown-toggle').text($(this).text());
-        });
-        
-        // Hide dropdown when clicking outside
-        $(document).click(function(e) {
-          if (!$(e.target).closest('.dropdown-toggle').length) {
+            $('#room-table-body tr').each(function() {
+                var rowStatus = $(this).data('status');
+                
+                if (filterValue === 'all' || rowStatus === filterValue) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
             $('.dropdown-menu').hide();
-          }
+            $('.dropdown-toggle').text($(this).text());
         });
-      });
+        $(document).click(function(e) {
+            if (!$(e.target).closest('.dropdown-toggle').length) {
+                $('.dropdown-menu').hide();
+            }
+        });
+    });
 
-      document.querySelector('.dropdownMenuButton').addEventListener('click', function() {
-          document.querySelector('.dropdownMenu').classList.toggle('show');
-      })
+    document.querySelector('.dropdownMenuButton').addEventListener('click', function() {
+        document.querySelector('.dropdownMenu').classList.toggle('show');
+    });
 });

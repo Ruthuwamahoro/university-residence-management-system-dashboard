@@ -143,6 +143,14 @@ canvas {
 .dark-theme .sidebar {
     background-color: #23272b;
 }
+.dark-theme .notifications-list {
+    background-color: #23272b;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dark-theme .notification-item {
+    background-color: #23272b;
+
+}
 
 .dark-theme .sidebar .nav-link {
     color: #fff;
@@ -157,6 +165,13 @@ canvas {
     background-color: #23272b;
     border-bottom: 1px solid #343a40;
 }
+.dark-theme .form-control {
+    background-color: #23272b;
+    color: white;
+}
+.dark-theme .input-group-text {
+    background-color: #23272b;
+}
 
 .dark-theme .table {
     color: #fff;
@@ -166,8 +181,20 @@ canvas {
     background-color: #495057;
     color: #fff;
 }
+.dark-theme body {
+    color: white;
+}
 
 .dark-theme .theme-switcher i, .dark-theme .notifications i, .dark-theme .input-group-text i {
+    color: #fff;
+}
+.main-content .theme-switcher i,
+.main-content .notifications i {
+    transition: color 0.3s ease;
+}
+
+.main-content .theme-switcher:hover i,
+.main-content .notifications:hover i {
     color: #fff;
 }
 
@@ -228,6 +255,7 @@ canvas {
     color: #f0f0f0;
     border-radius: 20px;
 }
+
 
 @media (max-width: 768px) {
     .sidebar {

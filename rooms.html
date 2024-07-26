@@ -49,19 +49,31 @@
         <div class="input-group w-50">
           <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-          </div>
+          </div class="search-container">
               <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon1">
           </div>
-        <div class="d-flex align-items-center">
-          <div class="theme-switcher mr-3">
-            <i class="fas fa-sun toogle-mode"></i>
-          </div>
-          <div class="position-relative">
-            <p class="nbr-notifications"></p>
-            <div class="notifications">
-              <i class="fas fa-bell"></i>
+          <div class="d-flex align-items-center">
+            <div class="theme-switcher mr-3">
+                <i class="fas fa-sun"></i>
             </div>
-          </div>
+                <div class="position-relative">
+                    <p class="nbr-notifications"></p>
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    </div>
+            </div>
+            <div class="notificationMessage">
+
+            </div>
+            <div class="dropdownMenuButton">
+                <i class="fas fa-bars mr-3"> </i>
+            </div>
+            <div class="dropdownMenu">
+                <a href="index.html">Dashboard</a>
+                <a href="rooms.html">Rooms</a>
+                <a href="maintenance.html">Maintenance</a>
+                <a href="settings.html">Settings</a>
+            </div>
         </div>
         <div class="dropdownMenuButton">
                 <i class="fas fa-bars mr-3"> </i>
@@ -161,47 +173,6 @@
   <script src="js/script.js"></script>
   <script src="js/app.js"></script>
   <script src="js/notifications.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Toggle the dropdown
-      $('.dropdown-toggle').click(function() {
-        $(this).siblings('.dropdown-menu').toggle();
-      });
-
-      // Handle dropdown item click
-      $('.dropdown-item').click(function() {
-        var filterValue = $(this).data('filter');
-        
-        $('#room-table-body tr').each(function() {
-          var rowStatus = $(this).data('status');
-          
-          if (filterValue === 'all' || rowStatus === filterValue) {
-            $(this).show();
-          } else {
-            $(this).hide();
-          }
-        });
-        
-        // Close dropdown after selection
-        $('.dropdown-menu').hide();
-        // Update button text
-        $('.dropdown-toggle').text($(this).text());
-      });
-      
-      // Hide dropdown when clicking outside
-      $(document).click(function(e) {
-        if (!$(e.target).closest('.dropdown-toggle').length) {
-          $('.dropdown-menu').hide();
-        }
-      });
-    });
-  </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/notifications.js"></script>
+  <script src="js/room.js"></script>
 </body>
 </html>
