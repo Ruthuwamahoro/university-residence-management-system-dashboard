@@ -60,3 +60,4 @@ Contributions are welcome! Please submit issues, feature requests, or pull reque
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+Documentation(https://docs.google.com/document/d/1xE7ymGNCYOLr_IvRaLhtq7gJQZQJoNhGh2BbUc8Anao/edit)
