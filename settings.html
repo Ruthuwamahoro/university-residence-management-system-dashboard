@@ -49,7 +49,7 @@
       </ul>
     </div>
     <div class="main-content flex-grow-1 p-3">
-      <header class="d-flex justify-content-between align-items-center mb-4">
+      <header class="nav-bar d-flex justify-content-between align-items-center mb-4">
         <div class="input-group w-50">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
@@ -66,9 +66,15 @@
               <i class="fas fa-bell"></i>
             </div>
           </div>
-          <div class="menu d-lg-none">
-            <i class="fas fa-bars"></i>
-          </div>
+          <div class="dropdownMenuButton">
+            <i class="fas fa-bars mr-3"> </i>
+        </div>
+        <div class="dropdownMenu">
+            <a href="index.html">Dashboard</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="maintenance.html">Maintenance</a>
+            <a href="settings.html">Settings</a>
+        </div>
         </div>
       </header>
       <div class="notifications-container position-relative">
@@ -78,11 +84,11 @@
         </div>
       </div>
       <section class="settings">
-        <h1 class="text-white mb-4">Settings</h1>
+        <h1 class="text-dark mb-4">Settings</h1>
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h3 class="text-primary">User Details</h3>
+              <h3 class="text-dark">User Details</h3>
               <form id="user-details-form">
                 <div class="form-group">
                   <label for="username">Username</label>
@@ -96,7 +102,7 @@
               </form>
             </div>
             <div class="col-md-6">
-              <h3 class="text-primary">Change Password</h3>
+              <h3 class="text-dark">Change Password</h3>
               <form id="change-password-form">
                 <div class="form-group">
                   <label for="current-password">Current Password</label>

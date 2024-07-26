@@ -27,13 +27,13 @@ body {
   }
   
   .settings .btn-primary {
-    background-color: #007bff;
+    background-color: #80AF81;
     border: none;
     border-radius: 4px;
   }
   
   .settings .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #80AF81;
   }
   
   .notifications-container {
@@ -89,13 +89,13 @@ body {
   }
   
   .settings .btn-primary {
-    background-color: #007bff;
+    background-color: #80AF81;
     border: none;
     border-radius: 4px;
   }
   
   .settings .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #80AF81;
   }
   
   .notifications-container {
@@ -126,12 +126,12 @@ body {
   }
   
   body.dark-mode .settings .btn-primary {
-    background-color: #007bff;
+    background-color: #80AF81;
     color: #e0e0e0;
   }
   
   body.dark-mode .settings .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #80AF81;
   }
   
   body.dark-mode .notifications-container {
