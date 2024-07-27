@@ -11,7 +11,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const API_URL = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/maintenances';
     const API_URL_NOTIFICATIONS = 'https://669a46459ba098ed61ff0909.mockapi.io/api/request/notifications';
     const filterButtons = document.querySelectorAll('.dropdown-item');
+    const addNoteBtn = document.getElementById('add-note-btn');
+    const addNoteForm = document.getElementById('add-note-form');
+    const roomNumberInput = document.getElementById('roomNumberInput');
+    const noteInput = document.getElementById('noteInput');
 
+    // Handle menu toggling
     if (menu) {
         menu.addEventListener('click', (e) => {
             e.preventDefault();
@@ -19,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    // Handle search input focus
     if (searchInput) {
         searchInput.addEventListener('focus', () => {
             searchInput.style.border = 'none';
@@ -26,12 +32,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    // Handle theme toggle
     if (toggleMode) {
         toggleMode.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
     }
 
+    // Handle notifications panel
     if (notificationsPanel && notificationsList && notificationsContainer) {
         notificationsPanel.addEventListener('click', () => {
             notificationsContainer.style.display = notificationsContainer.style.display === 'block' ? 'none' : 'block';
@@ -118,6 +126,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 filteredData = data.filter(item => item.status === value);
             } else if (criteria === 'roomNumber') {
                 filteredData = data.filter(item => item.roomNumber === value);
+            } else if (criteria === 'All') {
+                filteredData = data; // No filtering
             }
             populateTable(filteredData);
         });
@@ -126,11 +136,48 @@ document.addEventListener('DOMContentLoaded', async () => {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const filterCriteria = button.getAttribute('data-filter');
-            const filterValue = prompt(`Enter ${filterCriteria}`);
-            filterMaintenanceRequests(filterCriteria, filterValue);
+            const filterValue = filterCriteria === 'All' ? 'All' : prompt(`Enter ${filterCriteria}`);
+            if (filterValue !== null) {
+                filterMaintenanceRequests(filterCriteria, filterValue);
+            }
         });
+    });
+
+    addNoteBtn.addEventListener('click', () => {
+        $('#addNoteModal').modal('show');
+    });
+
+    addNoteForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const roomNumber = roomNumberInput.value.trim();
+        const note = noteInput.value.trim();
+
+        if (roomNumber && note) {
+            try {
+                // Assuming there's an endpoint to update a maintenance request with notes
+                const response = await fetch(`${API_URL}?roomNumber=${roomNumber}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ notes: note })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                $('#addNoteModal').modal('hide');
+                roomNumberInput.value = '';
+                noteInput.value = '';
+                const updatedData = await fetchData();
+                populateTable(updatedData);
+            } catch (error) {
+                console.error('Error adding note:', error);
+            }
+        }
     });
 
     const maintenanceData = await fetchData();
     populateTable(maintenanceData);
 });
+
