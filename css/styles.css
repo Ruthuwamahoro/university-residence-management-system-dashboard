@@ -69,6 +69,7 @@ body {
 
 .sidenav {
     background-color: var(--bg-top-nav);
+    height: 100vh;
 }
 
 .list-unstyled:hover {
