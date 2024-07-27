@@ -76,6 +76,12 @@ header {
     cursor: pointer;
 }
 
+.dashboard {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 section.dashboard h1, section.rooms h1 {
     margin-bottom: 20px;
     color: #000;

@@ -56,6 +56,7 @@ Contributions are welcome! Please submit issues, feature requests, or pull reque
 - **[Ruth Uwamahoro](https://github.com/Ruthuwamahoro)**
 - **[Placide SHEMA](https://github.com/PSHEMA)**
 - **[Henriette Tuombe](https://github.com/henriettetuombe)**
+- **[Vivance Niyoyavuze](https://github.com/vivanceA)**
 
 ## License
 
