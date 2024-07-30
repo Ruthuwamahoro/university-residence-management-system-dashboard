@@ -268,7 +268,7 @@ canvas {
     }
 
     .table thead {
-        display: none; /* Hide table headers */
+        display: none;
     }
 
     
@@ -286,7 +286,7 @@ canvas {
         position: relative;
     }
     .table td::before {
-        content: attr(data-label); /* Use data-label attribute for the content */
+        content: attr(data-label);
         position: absolute;
         left: 0;
         width: 45%;
