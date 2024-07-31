@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage university residence efficiently with the University Residence Management System.">
     <link rel="icon" type="image/jpg" href="images/MostarResidents.jpg">
     <title>University Residence Management System</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/notifications.css">
@@ -17,27 +22,27 @@
         <div class="sidebar p-3 sidenav">
             <h5 class="text-center fw-bolder py-4">University Residence Management System</h5>
             <div class="d-flex justify-content-center align-items-center mb-3">
-                <img src="Assets/images/MostarResidents.jpg" alt="Logo" class="logo-img">
+                <img src="Assets/images/MostarResidents.jpg" alt="Logo of Mostar Residents" class="logo-img">
             </div>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2">
-                    <a class="nav-link text-left" href="index.html">
+                    <a class="nav-link text-left" href="index.html" aria-label="Dashboard">
                         <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link text-left" href="rooms.html">
-                        <i class="fas fa-bed mr-2 sideNav"></i>Rooms
+                    <a class="nav-link text-left" href="rooms.html" aria-label="Rooms">
+                        <i class="fas fa-bed mr-2"></i>Rooms
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link text-left" href="maintenance.html">
-                        <i class="fas fa-tools mr-2 sideNav"></i>Maintenance
+                    <a class="nav-link text-left" href="maintenance.html" aria-label="Maintenance">
+                        <i class="fas fa-tools mr-2"></i>Maintenance
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link text-left" href="settings.html">
-                        <i class="fas fa-cog mr-2 sideNav"></i>Settings
+                    <a class="nav-link text-left" href="settings.html" aria-label="Settings">
+                        <i class="fas fa-cog mr-2"></i>Settings
                     </a>
                 </li>
             </ul>
@@ -52,29 +57,29 @@
                 </div>
                 <div class="d-flex align-items-center">
                     <div class="theme-switcher mr-3">
-                        <i class="fas fa-sun toogle-mode"></i>
+                        <i class="fas fa-sun toggle-mode" aria-label="Toggle theme"></i>
                     </div>
                     <div class="position-relative">
                         <p class="nbr-notifications"></p>
                         <div class="notifications">
-                            <i class="fas fa-bell"></i>
+                            <i class="fas fa-bell" aria-label="Notifications"></i>
                         </div>
                     </div>
-                    
                     <div class="dropdownMenuButton">
-                        <i class="fas fa-bars mr-3"> </i>
+                        <i class="fas fa-bars mr-3" aria-label="Menu" data-toggle="dropdown"></i>
                     </div>
-                    <div class="dropdownMenu">
-                        <a href="index.html">Dashboard</a>
-                        <a href="rooms.html">Rooms</a>
-                        <a href="maintenance.html">Maintenance</a>
-                        <a href="settings.html">Settings</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="index.html">Dashboard</a>
+                        <a class="dropdown-item" href="rooms.html">Rooms</a>
+                        <a class="dropdown-item" href="maintenance.html">Maintenance</a>
+                        <a class="dropdown-item" href="settings.html">Settings</a>
                     </div>
                 </div>
             </header>
             <div class="notifications-container position-relative">
                 <div class="notifications col-4 p-3 position-absolute">
                     <div class="notifications-list" id="notifications-list">
+                        <!-- Notification items will be populated here -->
                     </div>
                 </div>
             </div>
@@ -82,7 +87,7 @@
                 <h1 class="text-white text-center">Mostar Room Management</h1>
                 <div class="row">
                     <div class="col-md-6 mb-4">
-                        <h4 class="text-white">Rooms Types</h4>
+                        <h4 class="text-white">Room Types</h4>
                         <canvas id="roomTypesChart"></canvas>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -97,10 +102,12 @@
             </section>    
         </div>
     </div>
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
     <script src="js/script.js"></script>
     <script src="js/app.js"></script>
     <script src="js/notifications.js"></script>
