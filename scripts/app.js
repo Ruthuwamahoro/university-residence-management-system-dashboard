@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Create Room Types Chart
     const ctxRoomTypes = document.getElementById('roomTypesChart')?.getContext('2d');
     if (ctxRoomTypes) {
         new Chart(ctxRoomTypes, {
@@ -12,11 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Room Types Distribution'
+                    }
+                }
             }
         });
     }
 
+    // Create Maintenance Requests Chart
     const ctxMaintenance = document.getElementById('maintenanceChart')?.getContext('2d');
     if (ctxMaintenance) {
         new Chart(ctxMaintenance, {
@@ -36,11 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     y: {
                         beginAtZero: true
                     }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Maintenance Requests Over Time'
+                    }
                 }
             }
         });
     }
 
+    // Create Occupancy Rates Chart
     const ctxOccupancy = document.getElementById('occupancyChart')?.getContext('2d');
     if (ctxOccupancy) {
         new Chart(ctxOccupancy, {
@@ -59,6 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 scales: {
                     y: {
                         beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Occupancy Rates by Floor'
                     }
                 }
             }

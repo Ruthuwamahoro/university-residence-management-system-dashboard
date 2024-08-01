@@ -76,6 +76,13 @@ header {
     cursor: pointer;
 }
 
+
+.dashboard {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 section.dashboard h1, section.rooms h1 {
     margin-bottom: 20px;
     color: #000;
@@ -223,6 +230,10 @@ canvas {
     border-radius: 20px;
 }
 
+.table-responsive {
+    overflow: auto;
+}
+
 
 @media (max-width: 768px) {
     .sidebar {
@@ -254,5 +265,34 @@ canvas {
         display: block;
         font-size: 24px;
         margin-left: 24px;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .table tr {
+        margin-bottom: 15px;
+    }
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+        white-space: nowrap;
     }
 }
