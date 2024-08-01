@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const ctxRoomTypes = document.getElementById('roomTypesChart')?.getContext('2d');
+    // access theme switcher class
     const toggleMode = document.querySelector('.theme-switcher');
 
     if (ctxRoomTypes) {

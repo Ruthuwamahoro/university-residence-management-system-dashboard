@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         }
     };
-
+    // filtering
     const filterMaintenanceRequests = (criteria, value) => {
         fetchData().then(data => {
             let filteredData = data;
