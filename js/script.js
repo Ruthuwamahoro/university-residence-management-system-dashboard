@@ -154,7 +154,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (roomNumber && note) {
             try {
-                // Assuming there's an endpoint to update a maintenance request with notes
                 const response = await fetch(`${API_URL}?roomNumber=${roomNumber}`, {
                     method: 'PATCH',
                     headers: {
